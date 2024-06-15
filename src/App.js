@@ -18,13 +18,20 @@ function App() {
   // const spread = [...fruits, ...otherFruits];
   // console.log("Spread opeartor", spread);
 
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    fetch("movies.json")
+      .then((response) => response.json())
+      .then((data) => setMovies(data));
+  }, []);
 
   return (
     <div className="App">
       <div className="container">
         <Header />
       </div>
-      <MoviesGrid />
+      <MoviesGrid movies={movies} />
       <Footer />
     </div>
   );
