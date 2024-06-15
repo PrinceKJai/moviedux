@@ -20,7 +20,7 @@ function App() {
   // console.log("Spread opeartor", spread);
 
   const [movies, setMovies] = useState([]);
-  const [watchList, setWatchlist] = useState([]);
+  const [watchlist, setWatchlist] = useState([]);
 
   useEffect(() => {
     fetch("movies.json")
@@ -58,7 +58,7 @@ function App() {
             element={
               <MoviesGrid
                 movies={movies}
-                watchList={watchList}
+                watchlist={watchlist}
                 toggleWatchlist={toggleWatchlist}
               />
             }
@@ -68,7 +68,7 @@ function App() {
             element={
               <Watchlist
                 movies={movies}
-                watchList={watchList}
+                watchlist={watchlist}
                 toggleWatchlist={toggleWatchlist}
               />
             }
